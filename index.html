@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Gradient Ring or Loader</title>
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+      <div class="outer"></div>
+      <div class="inner">
+         <span>0%</span>
+      </div>
+      <!-- This is Javascript Code -->
+      <script>
+         let outer = document.querySelector(".outer");
+         let inner = document.querySelector(".inner");
+         let percent = document.querySelector("span");
+         let count = 0;
+         inner.addEventListener('click', function(){
+           let loading = setInterval(function(){
+             if(count == 100){
+               outer.classList.remove("active-loader");
+               outer.classList.add("active-loader-2");
+               clearInterval();
+             }else{
+               count = count + 1;
+               percent.textContent = count + '%';
+               outer.classList.add("active-loader");
+             }
+           },200);
+         });
+      </script>
+   </body>
+</html>
